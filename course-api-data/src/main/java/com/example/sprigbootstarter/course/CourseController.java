@@ -21,7 +21,6 @@ public class CourseController {
 	@RequestMapping("/topics/{topicId}/courses")
 	public List <Course> getAllCourses(@PathVariable String topicId) {
 		return courseService.getAllCourses(topicId);
-		 
 	}
 	
 	@RequestMapping("/topics/{topicId}/courses/{id}")
@@ -31,6 +30,7 @@ public class CourseController {
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/topics/{topicId}/courses")
 	public void addCourse(@RequestBody Course course, @PathVariable String topicId) {
+		//We don't have to provide full Topic instance when saving the course. Just populating the topicId is enough 
 		course.setTopic(new Topic(topicId, "", ""));
 		courseService.addCourse(course);
 	}

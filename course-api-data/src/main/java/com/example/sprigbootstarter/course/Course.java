@@ -2,6 +2,7 @@ package com.example.sprigbootstarter.course;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import com.example.sprigbootstarter.topic.Topic;
 
@@ -13,6 +14,7 @@ public class Course {
 	private String name;
 	private String description;
 	
+	@ManyToOne
 	private Topic topic;
 		
 	public Course() {
@@ -24,6 +26,8 @@ public class Course {
 		this.id = id;
 		this.name = name;
 		this.description = description;
+		//This is just for convenience. Not really requried.
+		//This is for making it easy to create new course Object with a given Topic.
 		this.topic = new Topic(tipocId, "", "");
 	}
 	
