@@ -12,6 +12,7 @@
 	<artifactId>course-api-data</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>course-api-data</name>
+	<packaging>jar</packaging>
 	<description>Course api with data for Spring boot quick start.</description>
 
 	<properties>
